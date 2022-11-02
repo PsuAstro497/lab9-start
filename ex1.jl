@@ -114,6 +114,22 @@ md"""
 (Alternatively, if you have some form of color vision deficiency and are comfortable sharing, then I'd be interested to hear which of the palettes was most helpful to you.)  
 """
 
+# ╔═╡ d91a77fe-ce57-42d1-907c-f784b0d6cf7a
+md"""
+## Saving figures
+Using Julia's Plots.jl package, you can use a command like 
+`savefig(plt, "my_plot.pdf")`
+to save the plot stored in the plt variable to a file.  
+It will choose the file format based on the extension of the filename you provide.  
+PNG format works well for web graphics.  PDF format works well for printing including in journal articles.  
+Optionally, check the saved versions of your figures to make sure that they look as intended when opened as a PDF file. 
+
+(Depending on which [plotting backend](https://docs.juliaplots.org/stable/backends/) you use, different file formats will be available.  All the backends support both pdf and png.) 
+"""
+
+# ╔═╡ 854028e8-7bf9-409b-b1b7-ead2fd81924d
+
+
 # ╔═╡ ad9f39eb-aa7c-4b3b-a2d0-3fb60803c8e8
 md"""
 # Setup & Helper Code
@@ -218,6 +234,8 @@ let  # Make several changes to this cell for Q1b
 	
 	xlims!(plt,-10,10)
 	ylims!(plt,-3,3)
+	savefig(plt, "fig1.pdf")
+	plt
 end
 
 # ╔═╡ a4a1b728-3faf-4fd3-80c5-829a8e223a05
@@ -266,6 +284,8 @@ let    # Make several changes to this cell for Q1d
 	
 	xlims!(plt,-10,10)
 	ylims!(plt,-3,3)
+	savefig(plt, "fig2.pdf")
+	plt
 end
 
 # ╔═╡ 0c5f41c1-4a09-4153-82b0-d6caa48a7aee
@@ -344,7 +364,8 @@ let    # Make several changes to this cell for Q1d
 	xlims!(plt2,-3,3)
 	
 	plt = plot(plt1,plt2, layout=grid(1,2))
-	
+	savefig(plt, "fig3.pdf")
+	plt
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -1646,6 +1667,8 @@ version = "1.4.1+0"
 # ╟─405f0a98-8028-4779-b123-38d81a74d9f4
 # ╟─2cde928a-e26a-46c2-8345-95db60646b58
 # ╟─4ac3b5b7-9bd0-4531-961f-eb5af9de7f78
+# ╟─d91a77fe-ce57-42d1-907c-f784b0d6cf7a
+# ╠═854028e8-7bf9-409b-b1b7-ead2fd81924d
 # ╟─ad9f39eb-aa7c-4b3b-a2d0-3fb60803c8e8
 # ╟─454bcf75-a3ac-44e1-9b7d-7ae6a11b0f6e
 # ╠═a5507290-cc97-479b-bca4-c599f91e8913
